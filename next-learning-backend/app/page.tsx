@@ -7,7 +7,7 @@ interface user{
 }
 
 async function detais(){
-  return await axios.get("https://week-13-offline.kirattechnologies.workers.dev/api/v1/user/details")
+  return await axios.get("http://localhost:3000/api/user")
     .then(res=>{
       return res.data;
     })
