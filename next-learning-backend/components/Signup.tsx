@@ -2,21 +2,23 @@
 import axios from "axios";
 import { ChangeEventHandler, useState } from "react";
 
-
-
-
 export default function Signup() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
  async function handle(){
-   
+        
        await axios.post("http://localhost:3000/api/user",
        {
         email:username,
         password:password
-       }
-       ) 
+       })
+       .then(res=>{
+        alert(res.data.message); 
+        console.log(res.data);
+       
+       })
+       
     }
 
     return <div className="h-screen flex justify-center flex-col">
